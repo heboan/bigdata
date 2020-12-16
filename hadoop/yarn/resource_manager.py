@@ -66,22 +66,22 @@ def validate_cluster_container_status(cluster_container_status, required=False):
 
 class ResourceManager(BaseRequestApi):
     def __init__(self, service_endpoints=None, auth=None, timeout=30, verify=True):
-        active_service_endpoint = None
+        self.active_service_endpoint = None
         if not service_endpoints:
-            active_service_endpoint = get_active_resource_manager(timeout, auth, verify)
+            self.active_service_endpoint = get_active_resource_manager(timeout, auth, verify)
         else:
             for endpoint in service_endpoints:
                 if check_is_active_rm(endpoint, timeout, auth, verify):
-                    active_service_endpoint = endpoint
+                    self.active_service_endpoint = endpoint
                     break
 
-        if active_service_endpoint:
-            super(ResourceManager, self).__init__(service_endpoint=active_service_endpoint, auth=auth, timeout=30, verify=verify)
+        if self.active_service_endpoint:
+            super(ResourceManager, self).__init__(service_endpoint=self.active_service_endpoint, auth=auth, timeout=30, verify=verify)
         else:
             raise Exception("No active RMs found")
 
     def get_active_url(self):
-        pass
+        return self.active_service_endpoint
 
     def cluster_infomation(self):
         api_path = '/ws/v1/cluster/info'
@@ -209,3 +209,4 @@ if __name__ == '__main__':
     rm = ResourceManager()
     info = rm.cluster_scheduler_queue("root")
     print(info)
+

@@ -5,6 +5,7 @@
 import os
 import xml.etree.ElementTree as ET
 import requests
+from common.base import BaseRequestApi
 
 
 # CONF_DIR = os.getenv('HADOOP_CONF_DIR', '/etc/hadoop/conf')
@@ -78,18 +79,58 @@ def get_active_resource_manager(timeout=30, auth=None, verify=True):
         return _get_resource_manager(hadoop_conf_path, None)
 
 
-def get_jobhistory_endpoint():
-    # log.info('Getting jobhistory endpoint from config: {config_path}'.format(config_path=config_path))
-    config_path = os.path.join(CONF_DIR, 'mapred-site.xml')
-    prop_name = 'mapreduce.jobhistory.webapp.address'
-    return parse(config_path, prop_name)
+# hdfs
+
+def _get_nameservices(hadoop_conf_path):
+    nameservices = parse(os.path.join(hadoop_conf_path, 'hdfs-site.xml'), 'dfs.nameservices')
+    if nameservices is not None:
+        nameservices = nameservices.split(',')
+    return nameservices
 
 
-def get_nodemanager():
-    # log.info('Getting nodemanager endpoint from config: {config_path}'.format(config_path=config_path))
-    config_path = os.path.join(CONF_DIR, 'yarn-site.xml')
-    prop_name = 'yarn.nodemanager.webapp.address'
-    return parse(config_path, prop_name)
+def _get_namenodes(hadoop_conf_path, nameservice=None):
+
+    namenodes = []
+    prop_ha_name = ""
+    if nameservice:
+        prop_ha_name = "{name}.{nameservice}".format(name="dfs.ha.namenodesdfs.ha.namenodes", nameservice=nameservice)
+
+    nn_tags = parse(os.path.join(hadoop_conf_path, 'hdfs-site.xml'), prop_ha_name).split(',')
+    for nn_tag in nn_tags:
+        prop_rpc_name = "{name}.{nameservice}.{nn_tag}".format(name="dfs.namenode.rpc-address",
+                                                               nameservice=nameservice,
+                                                               nn_tag=nn_tag)
+        namenode = parse(os.path.join(hadoop_conf_path, 'hdfs-site.xml'), prop_rpc_name)
+        namenodes.append(namenode.split(":")[0])
+    return namenodes
+
+
+def _get_active_namenode(namnodes):
+    for nn in namnodes:
+        service_endpoint = '{namenode}:50070'.format(namenode=nn)
+        api_path = '/jmx?qry=Hadoop:service=NameNode,name=NameNodeStatus'
+
+        bq = BaseRequestApi(service_endpoint=service_endpoint, timeout=30)
+        res = bq.request(api_path)
+        if res['beans'][0]['State'] == "active":
+            return nn
+    return None
+
+
+
+def get_active_namenodes(timeout=30, auth=None, verify=True):
+
+    active_namenodes = []
+    hadoop_conf_path = CONF_DIR
+    nameservices = _get_nameservices(hadoop_conf_path)
+    if nameservices:
+        for nameservice in nameservices:
+            ret = _get_namenodes(hadoop_conf_path, nameservice)
+            if ret:
+                nn = _get_active_namenode(ret)
+                if nn:
+                    active_namenodes.append(nn)
+    return active_namenodes
 
 
 def parse(config_path, key):
@@ -105,5 +146,4 @@ def parse(config_path, key):
 
 
 if __name__ == '__main__':
-    a = get_jobhistory_endpoint()
-    print(a)
+    pass
