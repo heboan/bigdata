@@ -9,11 +9,15 @@ from hadoop.yarn.constants import ApplicationState
 LEGAL_APPLICATION_STATES = {s for s, _ in ApplicationState}
 
 
-def validate_application_state(state, required=False):
+def validate_application_state(state):
+
     if state:
         if state not in LEGAL_APPLICATION_STATES:
             msg = 'Application State {} 是非法的'.format(state)
             raise Exception(msg)
+    else:
+        msg = "state argument is required to be provided"
+        raise Exception(msg)
 
 
 class NodeManager(BaseRequestApi):

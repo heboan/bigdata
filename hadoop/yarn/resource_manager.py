@@ -5,6 +5,7 @@
 from hadoop.yarn.constants import YarnApplicationState, FinalApplicationStatus, ClusterContainerSignal
 from common.base import BaseRequestApi
 from hadoop.hadoop_conf import get_active_resource_manager, check_is_active_rm
+from collections import deque
 
 
 LEGAL_STATES = {s for s, _ in YarnApplicationState}
@@ -128,10 +129,83 @@ class ResourceManager(BaseRequestApi):
         return self.request(api_path, params=params)
 
     def cluster_application(self, application_id):
-        path = '/ws/v1/cluster/apps/{appid}'.format(appid=application_id)
-        return self.request(path)
+        api_path = '/ws/v1/cluster/apps/{appid}'.format(appid=application_id)
+        return self.request(api_path)
 
+    def cluster_application_state(self, application_id):
+        api_path = '/ws/v1/cluster/apps/{appid}/state'.format(appid=application_id)
+        return self.request(api_path)
+
+    def cluster_application_kill(self, application_id):
+        data = {"state": "KILLED"}
+        api_path = '/ws/v1/cluster/apps/{appid}/state'.format(appid=application_id)
+        return self.request(api_path, 'PUT', json=data)
+
+    def cluster_nodes(self, states=None):
+        api_path = '/ws/v1/cluster/nodes'
+
+        validate_yarn_application_states(states)
+        loc_args = (
+            ('states', ','.join(states) if states else None),
+        )
+        params = self.construct_parameters(loc_args)
+
+        return self.request(api_path=api_path, doc_type='xml', params=params)
+
+    def cluster_node(self, node_id):
+        api_path = '/ws/v1/cluster/nodes/{nodeid}'.format(nodeid=node_id)
+        return self.request(api_path)
+
+    def cluster_node_update_resource(self, node_id, data):
+        """
+        For data body definition refer to:
+        (https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/ResourceManagerRest.html#Cluster_Node_Update_Resource_API)
+
+        :param node_id:
+        :param data: API response object with JSON data
+        :return:
+        """
+        api_path = '/ws/v1/cluster/nodes/{nodeid}/resource'.format(nodeid=node_id)
+        return self.request(api_path, 'POST', json=data)
+
+    def cluster_scheduler_queue(self, yarn_queue_name=None):
+        scheduler = self.cluster_scheduler()
+        root_queue = scheduler.get('scheduler').get('schedulerInfo').get('rootQueue')
+        all_queue_info = {}
+
+        def collect_queue_info(queue):
+            max_resource = queue.get('maxResources')
+            used_resource = queue.get('usedResources')
+            steady_resource = queue.get('steadyFairResources')
+
+            all_queue_info[queue.get('queueName')] = {
+                'queue_name': queue.get('queueName'),
+                'steady_memory': steady_resource.get('memory'),
+                'steady_vcores': steady_resource.get('vCores'),
+                'max_memory': max_resource.get('memory'),
+                'max_vcores': max_resource.get('vCores'),
+                'used_memory': used_resource.get('memory'),
+                'used_vcores': used_resource.get('vCores'),
+                'pending_containers': queue.get('pendingContainers'),
+                'allocated_containers': queue.get('allocatedContainers')
+            }
+
+            child_queues = queue.get('childQueues')
+            if child_queues:
+                if isinstance(child_queues, (list,)):
+                    for child_queue in child_queues:
+                        collect_queue_info(child_queue)
+                elif isinstance(child_queues, (dict,)):
+                    collect_queue_info(child_queues)
+
+        collect_queue_info(root_queue)
+
+        if yarn_queue_name:
+            return all_queue_info.get(yarn_queue_name, {})
+        return all_queue_info
 
 
 if __name__ == '__main__':
-    pass
+    rm = ResourceManager()
+    info = rm.cluster_scheduler_queue("root")
+    print(info)
