@@ -6,4 +6,7 @@ from common.base import BaseRequestApi
 
 
 class DatanodeManager(BaseRequestApi):
-    pass
+    
+
+    def jvm_mertics(self):
+        pass

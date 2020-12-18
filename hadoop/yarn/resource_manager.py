@@ -65,6 +65,9 @@ def validate_cluster_container_status(cluster_container_status, required=False):
 
 
 class ResourceManager(BaseRequestApi):
+    """
+    :param service_endpoints:list
+    """
     def __init__(self, service_endpoints=None, auth=None, timeout=30, verify=True):
         self.active_service_endpoint = None
         if not service_endpoints:
@@ -156,18 +159,6 @@ class ResourceManager(BaseRequestApi):
         api_path = '/ws/v1/cluster/nodes/{nodeid}'.format(nodeid=node_id)
         return self.request(api_path)
 
-    def cluster_node_update_resource(self, node_id, data):
-        """
-        For data body definition refer to:
-        (https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/ResourceManagerRest.html#Cluster_Node_Update_Resource_API)
-
-        :param node_id:
-        :param data: API response object with JSON data
-        :return:
-        """
-        api_path = '/ws/v1/cluster/nodes/{nodeid}/resource'.format(nodeid=node_id)
-        return self.request(api_path, 'POST', json=data)
-
     def cluster_scheduler_queue(self, yarn_queue_name=None):
         scheduler = self.cluster_scheduler()
         root_queue = scheduler.get('scheduler').get('schedulerInfo').get('rootQueue')
@@ -205,8 +196,13 @@ class ResourceManager(BaseRequestApi):
         return all_queue_info
 
 
+    def jvm_mertics(self):
+        api_path = '/jmx?qry=Hadoop:service=ResourceManager,name=JvmMetrics'
+        result = self.request(api_path)['beans'][0]
+        return result
+
+
 if __name__ == '__main__':
     rm = ResourceManager()
-    info = rm.cluster_scheduler_queue("root")
-    print(info)
+    print(rm.jvm_mertics())
 

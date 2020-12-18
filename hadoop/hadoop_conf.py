@@ -14,8 +14,6 @@ rootPath = curPath[:curPath.find("bigdata_monitor/")+len("bigdata_monitor/")]
 CONF_DIR = os.path.abspath(rootPath + 'hadoop/conf')
 
 
-
-
 def _get_rm_ids(hadoop_conf_path):
     rm_ids = parse(os.path.join(hadoop_conf_path, 'yarn-site.xml'), 'yarn.resourcemanager.ha.rm-ids')
     if rm_ids is not None:
@@ -93,43 +91,46 @@ def _get_namenodes(hadoop_conf_path, nameservice=None):
     namenodes = []
     prop_ha_name = ""
     if nameservice:
-        prop_ha_name = "{name}.{nameservice}".format(name="dfs.ha.namenodesdfs.ha.namenodes", nameservice=nameservice)
+        prop_ha_name = "dfs.ha.namenodes.{nameservice}".format(nameservice=nameservice)
 
     nn_tags = parse(os.path.join(hadoop_conf_path, 'hdfs-site.xml'), prop_ha_name).split(',')
     for nn_tag in nn_tags:
-        prop_rpc_name = "{name}.{nameservice}.{nn_tag}".format(name="dfs.namenode.rpc-address",
+        prop_rpc_name = "{name}.{nameservice}.{nn_tag}".format(name="dfs.namenode.http-address",
                                                                nameservice=nameservice,
                                                                nn_tag=nn_tag)
         namenode = parse(os.path.join(hadoop_conf_path, 'hdfs-site.xml'), prop_rpc_name)
-        namenodes.append(namenode.split(":")[0])
+        namenodes.append(namenode)
     return namenodes
 
 
-def _get_active_namenode(namnodes):
-    for nn in namnodes:
-        service_endpoint = '{namenode}:50070'.format(namenode=nn)
+def get_active_namenode(namenodes):
+    assert isinstance(namenodes, list)
+    for nn in namenodes:
+        # service_endpoint = '{namenode}:50070'.format(namenode=nn)
         api_path = '/jmx?qry=Hadoop:service=NameNode,name=NameNodeStatus'
-
-        bq = BaseRequestApi(service_endpoint=service_endpoint, timeout=30)
+        bq = BaseRequestApi(service_endpoint=nn, timeout=30)
         res = bq.request(api_path)
         if res['beans'][0]['State'] == "active":
             return nn
     return None
 
 
+def get_active_namenodes():
+    """
 
-def get_active_namenodes(timeout=30, auth=None, verify=True):
+    :return:  {"nameservice": "active_namenode", ...}
+    """
 
-    active_namenodes = []
+    active_namenodes = {}
     hadoop_conf_path = CONF_DIR
     nameservices = _get_nameservices(hadoop_conf_path)
     if nameservices:
         for nameservice in nameservices:
             ret = _get_namenodes(hadoop_conf_path, nameservice)
             if ret:
-                nn = _get_active_namenode(ret)
+                nn = get_active_namenode(ret)
                 if nn:
-                    active_namenodes.append(nn)
+                    active_namenodes[nameservice] = nn
     return active_namenodes
 
 
