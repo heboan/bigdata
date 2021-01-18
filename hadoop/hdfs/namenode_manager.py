@@ -74,4 +74,4 @@ class NamenodeManager(BaseRequestApi):
 
 if __name__ == '__main__':
      nm = NamenodeManager(nameservice='dev1')
-     print(nm.jvm_metrics())
+     print(nm.fsname_mertics())

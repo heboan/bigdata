@@ -109,9 +109,12 @@ def get_active_namenode(namenodes):
         # service_endpoint = '{namenode}:50070'.format(namenode=nn)
         api_path = '/jmx?qry=Hadoop:service=NameNode,name=NameNodeStatus'
         bq = BaseRequestApi(service_endpoint=nn, timeout=30)
-        res = bq.request(api_path)
-        if res['beans'][0]['State'] == "active":
-            return nn
+        try:
+            res = bq.request(api_path)
+            if res['beans'][0]['State'] == "active":
+                return nn
+        except  requests.exceptions.ConnectionError:
+            pass
     return None
 
 

@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="647eac9a-a9f1-436d-8ced-b92ba3b12cb9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hadoop/hadoop_conf.py" beforeDir="false" afterPath="$PROJECT_DIR$/hadoop/hadoop_conf.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hadoop/yarn/resource_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/hadoop/yarn/resource_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hadoop/hdfs/datanode_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/hadoop/hdfs/datanode_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hadoop/hdfs/namenode_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/hadoop/hdfs/namenode_manager.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,24 +14,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/hadoop/hdfs/namenode_manager.py">
+        <entry file="file://$PROJECT_DIR$/hadoop/cm/cloudera_manager.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
-              <folding>
-                <element signature="e#60#98#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/common/base.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
+            <state relative-caret-position="548">
+              <caret line="55" column="96" selection-start-line="55" selection-start-column="96" selection-end-line="55" selection-end-column="96" />
               <folding>
                 <element signature="e#60#75#0" expanded="true" />
               </folding>
@@ -40,50 +30,44 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hadoop/hdfs/datanode_manager.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="8" column="8" lean-forward="true" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+            <state relative-caret-position="116">
+              <caret line="4" column="38" lean-forward="true" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="38" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hadoop/yarn/resource_manager.py">
+        <entry file="file://$PROJECT_DIR$/common/base.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-342">
-              <caret line="15" column="59" lean-forward="true" selection-start-line="15" selection-start-column="59" selection-end-line="15" selection-end-column="59" />
+            <state relative-caret-position="-946">
+              <caret line="27" selection-start-line="27" selection-end-line="27" />
               <folding>
-                <element signature="e#60#162#0" expanded="true" />
+                <element signature="e#60#75#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hadoop/hadoop_conf.py">
+        <entry file="file://$PROJECT_DIR$/awx/awx_manager.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="515">
-              <caret line="134" selection-start-line="134" selection-end-line="134" />
+            <state relative-caret-position="1232">
+              <caret line="48" column="72" lean-forward="true" selection-start-line="48" selection-start-column="72" selection-end-line="48" selection-end-column="72" />
               <folding>
-                <element signature="e#60#69#0" expanded="true" />
+                <element signature="e#60#71#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hadoop/conf/yarn-site.xml">
+        <entry file="file://$PROJECT_DIR$/hadoop/hdfs/namenode_manager.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
-              <caret line="97" column="40" selection-start-line="97" selection-start-column="10" selection-end-line="97" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hadoop/conf/hdfs-site.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="443">
-              <caret line="209" selection-start-line="209" selection-end-line="212" selection-end-column="13" />
+            <state relative-caret-position="-519">
+              <caret line="29" column="37" lean-forward="true" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="37" />
+              <folding>
+                <element signature="e#60#98#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -104,10 +88,13 @@
       <find>yarn.resourcemanager.webapp.https.address</find>
       <find>yarn.nodemanager</find>
       <find>dfs.namenode.rpc-address</find>
-      <find>dfs.ha.namenodes.</find>
       <find>_get_nodemanager</find>
       <find>get_nodemanager</find>
       <find>yarn.resourcemanager.ha.rm-ids</find>
+      <find>dfs.ha.namenodes.</find>
+      <find>50070</find>
+      <find>print</find>
+      <find>cdh_api</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -122,21 +109,24 @@
         <option value="$PROJECT_DIR$/hadoop/yarn/NodeManager.py" />
         <option value="$PROJECT_DIR$/hadoop/yarn/constants.py" />
         <option value="$PROJECT_DIR$/hadoop/yarn/hadoop_conf.py" />
-        <option value="$PROJECT_DIR$/common/base.py" />
         <option value="$PROJECT_DIR$/awx/awx_manager.py" />
         <option value="$PROJECT_DIR$/hadoop/yarn/node_manager.py" />
-        <option value="$PROJECT_DIR$/hadoop/hdfs/datanode_manager.py" />
         <option value="$PROJECT_DIR$/hadoop/yarn/resource_manager.py" />
         <option value="$PROJECT_DIR$/hadoop/hadoop_conf.py" />
         <option value="$PROJECT_DIR$/hadoop/hdfs/namenode_manager.py" />
+        <option value="$PROJECT_DIR$/hadoop/cm/ClouderaManager.py" />
+        <option value="$PROJECT_DIR$/hadoop/cm/a.py" />
+        <option value="$PROJECT_DIR$/hadoop/hdfs/datanode_manager.py" />
+        <option value="$PROJECT_DIR$/common/base.py" />
+        <option value="$PROJECT_DIR$/hadoop/cm/cloudera_manager.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="145" />
-    <option name="y" value="20" />
+    <option name="x" value="380" />
+    <option name="y" value="17" />
     <option name="width" value="1644" />
-    <option name="height" value="998" />
+    <option name="height" value="1069" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -161,30 +151,19 @@
             <path>
               <item name="bigdata_monitor" type="b2602c69:ProjectViewProjectNode" />
               <item name="bigdata_monitor" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bigdata_monitor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bigdata_monitor" type="462c0819:PsiDirectoryNode" />
               <item name="hadoop" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="bigdata_monitor" type="b2602c69:ProjectViewProjectNode" />
               <item name="bigdata_monitor" type="462c0819:PsiDirectoryNode" />
               <item name="hadoop" type="462c0819:PsiDirectoryNode" />
-              <item name="conf" type="462c0819:PsiDirectoryNode" />
+              <item name="cm" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="bigdata_monitor" type="b2602c69:ProjectViewProjectNode" />
               <item name="bigdata_monitor" type="462c0819:PsiDirectoryNode" />
               <item name="hadoop" type="462c0819:PsiDirectoryNode" />
               <item name="hdfs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bigdata_monitor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bigdata_monitor" type="462c0819:PsiDirectoryNode" />
-              <item name="hadoop" type="462c0819:PsiDirectoryNode" />
-              <item name="yarn" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -196,7 +175,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/hadoop/hdfs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -223,8 +202,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.resource_manager">
-    <configuration name="hadoop_conf" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.cloudera_manager">
+    <configuration name="a" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="bigdata_monitor" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -232,12 +211,56 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/hadoop" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/hadoop/cm" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hadoop/hadoop_conf.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hadoop/cm/a.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="cloudera_manager" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="bigdata_monitor" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/hadoop/cm" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hadoop/cm/cloudera_manager.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="namenode_manager" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="bigdata_monitor" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/hadoop/hdfs" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hadoop/hdfs/namenode_manager.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -292,9 +315,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.resource_manager" />
+        <item itemvalue="Python.cloudera_manager" />
+        <item itemvalue="Python.a" />
         <item itemvalue="Python.node_manager" />
-        <item itemvalue="Python.hadoop_conf" />
+        <item itemvalue="Python.resource_manager" />
+        <item itemvalue="Python.namenode_manager" />
       </list>
     </recent_temporary>
   </component>
@@ -310,24 +335,33 @@
       <updated>1608012704128</updated>
       <workItem from="1608012705652" duration="3493000" />
       <workItem from="1608016276473" duration="14851000" />
-      <workItem from="1608082687297" duration="18810000" />
+      <workItem from="1608082687297" duration="18966000" />
+      <workItem from="1608170173082" duration="6711000" />
+      <workItem from="1608187442462" duration="16205000" />
+      <workItem from="1608711373031" duration="27000" />
+      <workItem from="1608711506491" duration="32000" />
+      <workItem from="1608862478663" duration="2476000" />
+      <workItem from="1609051605591" duration="13000" />
+      <workItem from="1609053967348" duration="26000" />
+      <workItem from="1610606560112" duration="653000" />
+      <workItem from="1610936539443" duration="14864000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37154000" />
+    <option name="totallyTimeSpent" value="78317000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-9" width="1864" height="1098" extended-state="6" />
+    <frame x="-11" y="-11" width="1942" height="1064" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22569832" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2149028" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.17130621" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2175926" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.23666666" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -348,36 +382,17 @@
     <option name="version" value="1" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/bigdata_monitor$hadoop_conf.coverage" NAME="hadoop_conf Coverage Results" MODIFIED="1608026886018" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hadoop" />
-    <SUITE FILE_PATH="coverage/bigdata_monitor$resource_manager.coverage" NAME="resource_manager Coverage Results" MODIFIED="1608107546929" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hadoop/yarn" />
-    <SUITE FILE_PATH="coverage/bigdata_monitor$node_manager.coverage" NAME="node_manager Coverage Results" MODIFIED="1608030660190" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hadoop/yarn" />
+    <SUITE FILE_PATH="coverage/bigdata_monitor$hadoop_conf.coverage" NAME="hadoop_conf Coverage Results" MODIFIED="1608171096485" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hadoop" />
+    <SUITE FILE_PATH="coverage/bigdata_monitor$resource_manager.coverage" NAME="resource_manager Coverage Results" MODIFIED="1608874673215" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hadoop/yarn" />
+    <SUITE FILE_PATH="coverage/bigdata_monitor$a.coverage" NAME="a Coverage Results" MODIFIED="1610948001378" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hadoop/cm" />
+    <SUITE FILE_PATH="coverage/bigdata_monitor$cloudera_manager.coverage" NAME="cloudera_manager Coverage Results" MODIFIED="1610959248801" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hadoop/cm" />
+    <SUITE FILE_PATH="coverage/bigdata_monitor$namenode_manager.coverage" NAME="namenode_manager Coverage Results" MODIFIED="1608864244861" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hadoop/hdfs" />
+    <SUITE FILE_PATH="coverage/bigdata_monitor$node_manager.coverage" NAME="node_manager Coverage Results" MODIFIED="1610606718592" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hadoop/yarn" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/hadoop/conf/mapred-site.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/awx/awx_manager.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="18" column="73" lean-forward="true" selection-start-line="18" selection-start-column="73" selection-end-line="18" selection-end-column="73" />
-          <folding>
-            <element signature="e#60#71#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/hadoop/conf/mapred-site.xml" />
     <entry file="file://$PROJECT_DIR$/hadoop/hdfs/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hadoop/yarn/node_manager.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="e#60#98#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hadoop/yarn/constants.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -386,63 +401,103 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hadoop/conf/hdfs-site.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="209" selection-start-line="209" selection-end-line="212" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hadoop/hdfs/datanode_manager.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="8" lean-forward="true" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hadoop/conf/yarn-site.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
+        <state relative-caret-position="408">
           <caret line="97" column="40" selection-start-line="97" selection-start-column="10" selection-end-line="97" selection-end-column="40" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hadoop/yarn/resource_manager.py">
+    <entry file="file://$PROJECT_DIR$/hadoop/conf/hdfs-site.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-342">
-          <caret line="15" column="59" lean-forward="true" selection-start-line="15" selection-start-column="59" selection-end-line="15" selection-end-column="59" />
-          <folding>
-            <element signature="e#60#162#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
-          <folding>
-            <element signature="e#60#75#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="798">
+          <caret line="42" column="51" selection-start-line="42" selection-start-column="10" selection-end-line="42" selection-end-column="51" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hadoop/hadoop_conf.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
-          <caret line="134" selection-start-line="134" selection-end-line="134" />
+        <state relative-caret-position="55">
+          <caret line="66" column="26" selection-start-line="66" selection-start-column="26" selection-end-line="66" selection-end-column="26" />
           <folding>
             <element signature="e#60#69#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hadoop/hdfs/namenode_manager.py">
+    <entry file="file://$PROJECT_DIR$/hadoop/yarn/resource_manager.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
+        <state relative-caret-position="741">
+          <caret line="204" column="26" selection-start-line="204" selection-start-column="26" selection-end-line="204" selection-end-column="26" />
+          <folding>
+            <element signature="e#60#162#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hadoop/yarn/node_manager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29">
+          <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
           <folding>
             <element signature="e#60#98#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hadoop/hdfs/datanode_manager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="4" column="38" lean-forward="true" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hadoop/cm/a.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1015">
+          <caret line="70" column="36" selection-start-line="70" selection-start-column="30" selection-end-line="70" selection-end-column="36" />
+          <folding>
+            <element signature="e#72#87#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/awx/awx_manager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1232">
+          <caret line="48" column="72" lean-forward="true" selection-start-line="48" selection-start-column="72" selection-end-line="48" selection-end-column="72" />
+          <folding>
+            <element signature="e#60#71#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-946">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+          <folding>
+            <element signature="e#60#75#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hadoop/hdfs/namenode_manager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-519">
+          <caret line="29" column="37" lean-forward="true" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="37" />
+          <folding>
+            <element signature="e#60#98#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hadoop/cm/cloudera_manager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="548">
+          <caret line="55" column="96" selection-start-line="55" selection-start-column="96" selection-end-line="55" selection-end-column="96" />
+          <folding>
+            <element signature="e#60#75#0" expanded="true" />
           </folding>
         </state>
       </provider>
